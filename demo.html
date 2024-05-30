@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link  rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    /* Add your responsive styles here */
+    @media (max-width: 768px) {
+      /* Styles for phones and small tablets */
+      .keyboard {
+        /* Adjust the width, height, and font size as needed */
+        width: 100%;
+        height: auto;
+        font-size: 14px;
+      }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      /* Styles for larger tablets */
+      .keyboard {
+        /* Adjust the width, height, and font size as needed */
+        width: 80%;
+        height: auto;
+        font-size: 16px;
+      }
+    }
+
+    @media (min-width: 1025px) {
+      /* Styles for desktops */
+      .keyboard {
+        /* Adjust the width, height, and font size as needed */
+        width: 60%;
+        height: auto;
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <div >
+        <input type="text" id="targetInput" placeholder="Tap here to type" onFocus="showISLKeyboard()"><br />
+        <button  onclick="FunctionForKeyboard()" style="display: inline-block;">ISL Keyboard</button>
+      </div>
+     
+     
+    
+    
+      <div class="keyboard" id="keyboard-div">
+        <div class="key" data-char="a"><img src="./Public/ISL-FS-Stock/A.jpg"  ></div>
+        <div class="key" data-char="b"><img src="./Public/ISL-FS-Stock/B.jpg"  ></div>
+        <div class="key" data-char="c"><img src="./Public/ISL-FS-Stock/C.jpg"  ></div>
+        <div class="key" data-char="d"><img src="./Public/ISL-FS-Stock/D.jpg"  ></div>
+        <div class="key" data-char="e"><img src="./Public/ISL-FS-Stock/E.jpg"  ></div>
+        <div class="key" data-char="f"><img src="./Public/ISL-FS-Stock/F.jpg"  ></div>
+        <div class="key" data-char="g"><img src="./Public/ISL-FS-Stock/G.jpg"  ></div>
+        <div class="key" data-char="h"><img src="./Public/ISL-FS-Stock/H.jpg"  ></div>
+        <div class="key" data-char="i"><img src="./Public/ISL-FS-Stock/I.jpg"  ></div>
+        <div class="key" data-char="j"><img src="./Public/ISL-FS-Stock/J.jpg"  ></div>
+        <div class="key" data-char="k"><img src="./Public/ISL-FS-Stock/K.jpg"  ></div>
+        <div class="key" data-char="l"><img src="./Public/ISL-FS-Stock/L.jpg"  ></div>
+        <div class="key" data-char="m"><img src="./Public/ISL-FS-Stock/M.jpg"  ></div>
+        <div class="key" data-char="n"><img src="./Public/ISL-FS-Stock/N.jpg"  ></div>
+        <div class="key" data-char="o"><img src="./Public/ISL-FS-Stock/O.jpg"  ></div>
+        <div class="key" data-char="p"><img src="./Public/ISL-FS-Stock/P.jpg"  ></div>
+        <div class="key" data-char="q"><img src="./Public/ISL-FS-Stock/Q.jpg"  ></div>
+        <div class="key" data-char="r"><img src="./Public/ISL-FS-Stock/R.jpg"  ></div>
+        <div class="key" data-char="s"><img src="./Public/ISL-FS-Stock/S.jpg"  ></div>
+        <div class="key" data-char="t"><img src="./Public/ISL-FS-Stock/T.jpg"  ></div>
+        <div class="key" data-char="u"><img src="./Public/ISL-FS-Stock/U.jpg"  ></div>
+        <div class="key" data-char="v"><img src="./Public/ISL-FS-Stock/V.jpg"  ></div>
+        <div class="key" data-char="w"><img src="./Public/ISL-FS-Stock/W.jpg"  ></div>
+        <div class="key" data-char="x"><img src="./Public/ISL-FS-Stock/X.jpg"  ></div>
+        <div class="key" data-char="y"><img src="./Public/ISL-FS-Stock/Y.jpg"  ></div>
+        <div class="key" data-char="z"><img src="./Public/ISL-FS-Stock/Z.jpg"  ></div>
+       
+        <div class="key_del" id="delete-button">Delete</div>
+         
+      
+       <button class="spcl" onclick="NumKeyFunction()">123</button>
+       <button class="spcl" onclick="SpecialCharacterFunction()">Spcl</button>
+       <div class="key" data-char= " " >SPACE</div>
+      </div>
+      
+      
+      
+    
+      <div id="Num-key" class="keyboard">
+        <div class="key"  data-char= "0" >0</div>
+        <div class="key"  data-char= "1" >1</div>
+        <div class="key"  data-char= "2" >2</div>
+        <div class="key"  data-char= "3" >3</div>
+        <div class="key"  data-char= "4" >4</div>
+        <div class="key"  data-char= "5" >5</div>
+        <div class="key"  data-char= "6" >6</div>
+        <div class="key"  data-char= "7" >7</div>
+        <div class="key"  data-char= "8" >8</div>
+        <div class="key"  data-char= "9" >9</div>
+        <button class="spcl"  onclick="BackToAlphabet()">Back to Alphabets</button>
+      </div>
+    
+      <div id="Special-character" class="keyboard">
+        <div class="key" data-char="~">~</div>
+        <div class="key" data-char="@">@</div>
+        <div class="key" data-char="!" >!</div>
+        <div class="key" data-char="#">#</div>
+        <div class="key" data-char="$">$</div>
+        <div class="key" data-char="%">%</div>
+        <div class="key" data-char="^">^</div>
+        <div class="key" data-char="&">&</div>
+        <div class="key" data-char="*">*</div>
+        <div class="key" data-char="(">(</div>
+        <div class="key" data-char=")">)</div>
+        <div class="key" data-char="_">_</div>
+        <div class="key" data-char="+">+</div>
+        <button class="spcl"  onclick="BackToAlphabet()">Back to Alphabets</button>
+      </div>
+    
+     
+      
+    
+    
+      <script>
+     var x = document.getElementById("keyboard-div");
+     var y = document.getElementById("Num-key");
+     var z = document.getElementById("Special-character");
+     x.style.visibility = 'hidden'
+     y.style.visibility = 'hidden';
+     z.style.visibility = 'hidden';
+    
+        function showISLKeyboard() {
+            document.getElementById('keyboard').style.display = 'flex';
+        }
+        
+        document.querySelectorAll('.key').forEach(key => {
+            key.addEventListener('click', function() {
+                const char = this.getAttribute('data-char');
+                const input = document.getElementById('targetInput');
+                input.value += char; // Append the character
+            });
+        });
+    
+        document.getElementById("delete-button").addEventListener("click", function() {
+        var inputElement = document.getElementById("targetInput"); 
+        var inputValue = inputElement.value;
+        inputElement
+        inputElement.value = inputValue.slice(0, -1);
+    });  
+    function FunctionForKeyboard() {
+        y.style.visibility = 'hidden'
+        z.style.visibility = "hidden"
+      if (x.style.visibility === 'hidden') {
+        x.style.visibility =  'visible';
+      }
+      else{
+        x.style.visibility =  'hidden';
+      }
+    } 
+    
+    
+      function NumKeyFunction() {
+        x.style.visibility = 'hidden'
+        z.style.visibility = "hidden"
+      if (y.style.visibility === 'hidden') {
+        y.style.visibility = 'visible';
+        y.style.display = 'flex';
+      }
+    }
+    function SpecialCharacterFunction(){
+      x.style.visibility='hidden'
+      y.style.visibility='hidden'
+      if (z.style.visibility === 'hidden'){
+        z.style.visibility = "visible";
+      }
+    }
+    
+     function BackToAlphabet(){
+      y.style.visibility='hidden'
+      z.style.visibility = "hidden";
+      if (x.style.visibility === 'hidden'){
+        x.style.visibility = "visible";
+      }
+    } 
+    
+    function closeModal() {
+      var modal = document.getElementById("keyboardModal");
+      modal.style.display = "none";
+    }
+        </script>
+  <!-- Your keyboard HTML code here -->
+</body>
+</html>
